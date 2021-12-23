@@ -1,0 +1,15 @@
+
+.mobile-menu{
+display: none !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .post-menu{
+        display: none;
+    }
+    .mobile-menu{
+        display: flex !important;
+    }
+  }

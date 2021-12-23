@@ -19,6 +19,7 @@ const Header = () => {
         />
       </Form>
     <Nav className="ms-auto">
+    <Navbar.Text className='fw-bold'>Create account. <span className='text-primary'>It's free!</span></Navbar.Text>
       <NavDropdown title="" id="collapsible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Sign Up</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Sign In</NavDropdown.Item>
