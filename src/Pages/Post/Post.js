@@ -24,6 +24,7 @@ const Post = () => {
   const [state3, setState3] = useState(false);
   const [state4, setState4] = useState(false);
   const [joinGroup, setJoinGroup] = useState(false);
+  const [showGroups, setShowGroups] = useState(false);
   const toggle = () => {
     setState(!state);
   };
@@ -38,6 +39,7 @@ const Post = () => {
   };
   const groupButton = () => {
     setJoinGroup(!joinGroup);
+    setShowGroups(!showGroups)
   };
   return (
     <Container className="mt-3 fs-5">
@@ -67,10 +69,15 @@ const Post = () => {
             variant="light me-4 bg-secondary bg-opacity-25"
             onClick={() => setShowWrite(!showWrite)}
           >
-            Write a Post <i class="fas fa-caret-down"></i>
+            Write a Post <i className="fas fa-caret-down"></i>
           </Button>
           <Button className="fw-bold" onClick={groupButton}  variant={"primary"+(joinGroup?"light":"")} >
-            <i className="fas fa-users"></i> Join Group
+              {
+                  joinGroup? <i class="fas fa-sign-out-alt me-2"></i> : <i className="fas fa-users me-2"></i>
+              }
+            {
+                joinGroup?"Leave Group": "Join Group"
+            }
           </Button>
         </Col>
       </Row>
@@ -138,77 +145,80 @@ const Post = () => {
           ) : null}
 
           {/* recommended groups */}
-          <div className="text-center">
-            <h5>
-              <i className="far fa-thumbs-up mt-5"></i> RECOMMENDED GROUPS
-            </h5>
-
-            <div className="mt-4 d-flex justify-content-between align-items-center">
-              <div className="d-flex align-items-center">
-                <img className="me-3" src={leisure} alt="" />
-                <h6>Leisure</h6>
+         {
+             showGroups?(
+                <div className="text-center">
+                <h5>
+                  <i className="far fa-thumbs-up mt-5"></i> RECOMMENDED GROUPS
+                </h5>
+    
+                <div className="mt-4 d-flex justify-content-between align-items-center">
+                  <div className="d-flex align-items-center">
+                    <img className="me-3" src={leisure} alt="" />
+                    <h6>Leisure</h6>
+                  </div>
+                  <Button
+                    variant={
+                      "light me-4 bg-dark text-white" +
+                      (state ? "light me-4 bg-secondary bg-opacity-25" : "")
+                    }
+                    onClick={toggle}
+                  >
+                    {state ? "Follow" : "Followed"}
+                  </Button>
+                </div>
+    
+                {/* Group 2 */}
+                <div className="mt-4 d-flex justify-content-between align-items-center">
+                  <div className="d-flex align-items-center">
+                    <img className="me-3" src={activism} alt="" />
+                    <h6>Activism</h6>
+                  </div>
+                  <Button
+                    variant={
+                      "light me-4 bg-dark text-white" +
+                      (!state2 ? "light me-4 bg-secondary bg-opacity-25" : "")
+                    }
+                    onClick={toggle2}
+                  >
+                    {!state2 ? "Follow" : "Followed"}
+                  </Button>
+                </div>
+                  {/* Group 3 */}
+                <div className="mt-4 d-flex justify-content-between align-items-center">
+                  <div className="d-flex align-items-center">
+                    <img className="me-3" src={mba} alt="" />
+                    <h6>MBA</h6>
+                  </div>
+                  <Button
+                    variant={
+                      "light me-4 bg-dark text-white" +
+                      (state3 ? "light me-4 bg-secondary bg-opacity-25" : "")
+                    }
+                    onClick={toggle3}
+                  >
+                    {state3 ? "Follow" : "Followed"}
+                  </Button>
+                </div>
+                  {/* Group 4 */}
+                <div className="mt-4 d-flex justify-content-between align-items-center">
+                  <div className="d-flex align-items-center">
+                    <img className="me-3" src={philosophy} alt="" />
+                    <h6>Philosophy</h6>
+                  </div>
+                  <Button
+                    variant={
+                      "light me-4 bg-dark text-white" +
+                      (!state4 ? "light me-4 bg-secondary bg-opacity-25" : "")
+                    }
+                    onClick={toggle4}
+                  >
+                    {!state4 ? "Follow" : "Followed"}
+                  </Button>
+                </div>
               </div>
-              <Button
-                variant={
-                  "light me-4 bg-dark text-white" +
-                  (state ? "light me-4 bg-secondary bg-opacity-25" : "")
-                }
-                onClick={toggle}
-              >
-                {state ? "Follow" : "Followed"}
-              </Button>
-            </div>
-
-            {/* Group 2 */}
-            <div className="mt-4 d-flex justify-content-between align-items-center">
-              <div className="d-flex align-items-center">
-                <img className="me-3" src={activism} alt="" />
-                <h6>Activism</h6>
-              </div>
-              <Button
-                variant={
-                  "light me-4 bg-dark text-white" +
-                  (!state2 ? "light me-4 bg-secondary bg-opacity-25" : "")
-                }
-                onClick={toggle2}
-              >
-                {!state2 ? "Follow" : "Followed"}
-              </Button>
-            </div>
-              {/* Group 3 */}
-            <div className="mt-4 d-flex justify-content-between align-items-center">
-              <div className="d-flex align-items-center">
-                <img className="me-3" src={mba} alt="" />
-                <h6>MBA</h6>
-              </div>
-              <Button
-                variant={
-                  "light me-4 bg-dark text-white" +
-                  (state3 ? "light me-4 bg-secondary bg-opacity-25" : "")
-                }
-                onClick={toggle3}
-              >
-                {state3 ? "Follow" : "Followed"}
-              </Button>
-            </div>
-              {/* Group 4 */}
-            <div className="mt-4 d-flex justify-content-between align-items-center">
-              <div className="d-flex align-items-center">
-                <img className="me-3" src={philosophy} alt="" />
-                <h6>Philosophy</h6>
-              </div>
-              <Button
-                variant={
-                  "light me-4 bg-dark text-white" +
-                  (!state4 ? "light me-4 bg-secondary bg-opacity-25" : "")
-                }
-                onClick={toggle4}
-              >
-                {!state4 ? "Follow" : "Followed"}
-              </Button>
-            </div>
-          </div>
-          <div></div>
+             ):null
+         }
         </Col>
       </Row>
     </Container>
