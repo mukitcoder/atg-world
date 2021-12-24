@@ -4,6 +4,8 @@ import postImage1 from "../../images/postImage1.png";
 import postImage2 from "../../images/postImage2.png";
 import user1 from "../../images/user1.png";
 import user2 from "../../images/user2.png";
+import "./Post.css";
+
 const Posts = () => {
     return (
         <Col md={8}>
@@ -26,10 +28,14 @@ const Posts = () => {
                   <img className="me-3" src={user1} alt="" />
                   <h5>Sarthak Kamra</h5>
                 </div>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center post-menu">
                   <i className="far fa-eye me-3"></i>
                   <span>1.4k views</span>
                   <i className="fas fa-share-alt bg-secondary bg-opacity-25 p-3 ms-5"></i>
+                </div>
+                {/* mobile view */}
+                <div className="d-flex align-items-center mobile-menu">
+                  <i className="fas fa-share-alt bg-secondary bg-opacity-25 px-2 py-1">  Share</i>
                 </div>
               </div>
             </Card.Body>
@@ -54,10 +60,14 @@ const Posts = () => {
                   <img className="me-3" src={user2} alt="" />
                   <h5>Sarah West</h5>
                 </div>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center post-menu">
                   <i className="far fa-eye me-3"></i>
                   <span>1.4k views</span>
                   <i className="fas fa-share-alt bg-secondary bg-opacity-25 p-3 ms-5"></i>
+                </div>
+                  {/* mobile view */}
+                  <div className="d-flex align-items-center mobile-menu">
+                  <i className="fas fa-share-alt bg-secondary bg-opacity-25 px-2 py-1">  Share</i>
                 </div>
               </div>
             </Card.Body>
