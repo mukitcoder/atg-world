@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Button,
-  Card,
   Col,
   Container,
   FormControl,
@@ -10,10 +9,6 @@ import {
   Row,
 } from "react-bootstrap";
 import "./Post.css";
-import postImage1 from "../../images/postImage1.png";
-import postImage2 from "../../images/postImage2.png";
-import user1 from "../../images/user1.png";
-import user2 from "../../images/user2.png";
 import leisure from "../../images/Leisure.png";
 import activism from "../../images/Activism.png";
 import mba from "../../images/MBA.png";
