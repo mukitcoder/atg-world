@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [ATG.WORLD](https://atg-worlds.netlify.app/).
 
-## MY Wroks
+## My Works
 
 <ul>
   <li>Responsive UI</li>
