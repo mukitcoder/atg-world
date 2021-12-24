@@ -1,6 +1,6 @@
 # Assignment
 
-This project was bootstrapped with [ATG.WORLD](https://atg-worlds.netlify.app/).
+Site Name: [ATG.WORLD](https://atg-worlds.netlify.app/).
 
 ## My Works
 
