@@ -20,7 +20,7 @@ const Login = ({ show, handleClose }) => {
               <Form>
                   <h3 className="mb-3 fw-bold">Sign In</h3>
                 <Form.Group className="mb-1" controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" placeholder="Email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
